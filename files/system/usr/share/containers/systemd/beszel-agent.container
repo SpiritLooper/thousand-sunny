@@ -21,6 +21,7 @@ ReadOnly=true
 SecurityLabelDisable=true
 
 [Service]
+StateDirectory=beszel-agent
 Restart=on-failure
 RestartSec=30s
 TimeoutStartSec=300
