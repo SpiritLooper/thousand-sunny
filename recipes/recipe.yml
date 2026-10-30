@@ -20,16 +20,17 @@ modules:
       ID: fedora
       NAME: ublue OS base main
       PRETTY_NAME: Thousand Sunny
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+        - SourceCodePro
   - type: dnf
-    repos:
-      files: 
-        - netbird.repo
     install:
       packages:
         - chezmoi
         - nix
         - fish
-        - netbird
     remove:
       packages:
         # Default ublue wtf
@@ -50,11 +51,11 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - FiraCode
-        - SourceCodePro
+  - type: rpm-ostree
+    repos: 
+      - netbird.repo
+    install:
+      - netbird
 
   - type: default-flatpaks
     configurations:
