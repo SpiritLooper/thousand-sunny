@@ -1,6 +1,5 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: thousand-sunny
 # description will be included in the image's metadata
 description: What i just need OS.
@@ -16,15 +15,21 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
+  - type: os-release
+    properties:
+      ID: fedora
+      NAME: ublue OS base main
+      PRETTY_NAME: Thousand Sunny
   - type: dnf
     repos:
-      copr:
-        - atim/starship
+      files: 
+        - netbird.repo
     install:
       packages:
-        - micro
-        - starship
+        - chezmoi
+        - nix
+        - fish
+        - netbird
     remove:
       packages:
         # Default ublue wtf
@@ -44,6 +49,12 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+        - SourceCodePro
 
   - type: default-flatpaks
     configurations:
