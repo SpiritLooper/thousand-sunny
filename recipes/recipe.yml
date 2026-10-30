@@ -6,7 +6,7 @@ name: thousand-sunny
 description: What i just need OS.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: quay.io/fedora/fedora-bootc
+base-image: ghcr.io/ublue-os/base-main
 image-version: 44 # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -27,6 +27,19 @@ modules:
         - starship
     remove:
       packages:
+        # Default ublue wtf
+        - avahi
+        - gamemode
+        - game-music-emu
+        - ublue-os-just
+        # VM guest additions stuff
+        - open-vm-tools
+        - virtualbox-guest-additions
+        - hyperv-daemons
+        - hypervfcopyd
+        - hypervkvpd
+        - hypervvssd
+        - nvidia-gpu-firmware
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
@@ -39,7 +52,6 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
-          - org.gnome.Loupe
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
