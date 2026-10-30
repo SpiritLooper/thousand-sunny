@@ -8,7 +8,7 @@ After=podman.socket
 [Container]
 ContainerName=beszel-agent
 # renovate: datasource=docker depName=docker.io/henrygd/beszel-agent
-Image=henrygd/beszel-agent
+Image=docker.io/henrygd/beszel-agent:latest
 Pull=missing
 Network=host
 Environment=LISTEN=45876
