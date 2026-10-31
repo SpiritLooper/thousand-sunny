@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+  - type: os-release
+    properties:
+      ID: fedora
+      NAME: Fedora bootc (ublue/base-main) w/ Gnome
+      PRETTY_NAME: Thousand Sunny

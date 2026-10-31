@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        # GNOME desktop
+        - gnome-shell
+        - gnome-session
+        - gdm
+        - gnome-settings-daemon
+        - gnome-control-center
+
+        # File management
+        - nautilus
+        - gvfs
+        - xdg-user-dirs
+        - xdg-user-dirs-gtk
+
+        # Extensions
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-blur-my-shell
+
+        # Gnome Apps
+        - gnome-clocks
+        - gnome-characters
+        - gnome-terminal
+        - gnome-disk-utility
+        - gnome-font-viewer
+        - gnome-keyring
+        - gnome-screenshot
+        - gnome-system-monitor
+        - gnome-tweaks
+        - gnome-weather
+        - decibels
+        - loupe
+        - papers
+        - showtime
+        - simple-scan
+        - snapshot
+
+  - type: systemd
+    system:
+      enabled:
+        - gdm.service

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    remove:
+      auto-remove: true
+      packages:
+        # Ublue main base default
+        - avahi
+        - gamemode
+        - game-music-emu
+        - ublue-os-just
+        # VM guest additions stuff
+        - open-vm-tools
+        - virtualbox-guest-additions
+        - hyperv-daemons
+        - hypervfcopyd
+        - hypervkvpd
+        - hypervvssd
+        - nvidia-gpu-firmware
+  - type: systemd
+    system:
+      disabled:
+        - sshd.service

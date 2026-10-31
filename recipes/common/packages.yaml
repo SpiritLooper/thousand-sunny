@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - from-file: packages/beszel-agent.yaml
+  - from-file: packages/netbird.yaml
+  - from-file: packages/nix.yaml
+  - from-file: packages/user-bootstrap.yaml

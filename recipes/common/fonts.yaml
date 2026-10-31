@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: dnf
+    install:
+      packages:
+        - terminus-fonts-console
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+        - SourceCodePro

@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: thousand-sunny
 # description will be included in the image's metadata
-description: What i just need OS.
+description: What i just need for my framework laptop OS.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
@@ -11,70 +11,10 @@ image-version: 44 # You can pin to a specific version of Fedora as well
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-  - type: os-release
-    properties:
-      ID: fedora
-      NAME: ublue OS base main
-      PRETTY_NAME: Thousand Sunny
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - FiraCode
-        - SourceCodePro
-  - type: dnf
-    install:
-      packages:
-        - chezmoi
-        - nix
-        - fish
-        - terminus-fonts-console
-    remove:
-      packages:
-        # Default ublue wtf
-        - avahi
-        - gamemode
-        - game-music-emu
-        - ublue-os-just
-        # VM guest additions stuff
-        - open-vm-tools
-        - virtualbox-guest-additions
-        - hyperv-daemons
-        - hypervfcopyd
-        - hypervkvpd
-        - hypervvssd
-        - nvidia-gpu-firmware
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
-  - type: rpm-ostree
-    repos: 
-      - netbird.repo
-    install:
-      - netbird
-
-  - type: systemd
-    system:
-      enabled:
-        - netbird.service
-        - nix.mount
-      disabled:
-        - sshd.service
-
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.mozilla.thunderbird
-          - io.github.ungoogled_software.ungoogled_chromium
-      - scope: user # Also add Flathub user repo, but no user packages
+  - from-file: utils/ublue-cleanup.yaml
+  - from-file: common/system.yaml
+  - from-file: common/fonts.yaml
+  - from-file: common/packages.yaml
+  - from-file: desktop/gnome.yaml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
