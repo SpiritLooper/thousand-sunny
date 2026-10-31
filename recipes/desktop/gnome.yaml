@@ -25,17 +25,18 @@ modules:
         # Gnome Apps
         - gnome-clocks
         - gnome-characters
-        - gnome-terminal
+        - gnome-extensions-app
         - gnome-disk-utility
         - gnome-font-viewer
         - gnome-keyring
-        - gnome-screenshot
         - gnome-system-monitor
+        - gnome-terminal
         - gnome-tweaks
         - gnome-weather
         - decibels
         - loupe
         - papers
+        - pinentry-gnome3
         - showtime
         - simple-scan
         - sushi
