@@ -38,7 +38,7 @@ modules:
         - papers
         - showtime
         - simple-scan
-        - snapshot
+        - sushi
 
   - type: systemd
     system:
