@@ -10,9 +10,10 @@ modules:
     configurations:
       - notify: true
         scope: system
+        install: # system flatpaks we want all users to have and not remove
+          - io.github.ungoogled_software.ungoogled_chromium
         # If no repo information is specified, Flathub will be used by default
+      - scope: user # Also add Flathub user repo, but no user packages
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.mozilla.thunderbird
-          - io.github.ungoogled_software.ungoogled_chromium
-      - scope: user # Also add Flathub user repo, but no user packages
