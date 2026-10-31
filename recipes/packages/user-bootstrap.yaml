@@ -6,6 +6,8 @@ modules:
       packages:
         - chezmoi
         - fish
+        - tuned
+        - tuned-ppd
   - type: default-flatpaks
     configurations:
       - notify: true
