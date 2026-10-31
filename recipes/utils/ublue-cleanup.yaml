@@ -17,6 +17,9 @@ modules:
         - hypervkvpd
         - hypervvssd
         - nvidia-gpu-firmware
+        # Firefox stuff
+        - firefox
+        - firefox-langpacks
   - type: systemd
     system:
       disabled:
