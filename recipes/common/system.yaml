@@ -5,8 +5,13 @@ modules:
     files:
       - source: system
         destination: /
+  - type: files
+    files:
+      - source: logo/thousand-sunny-small.png
+        destination: /usr/share/pixmaps
   - type: os-release
     properties:
       ID: fedora
-      NAME: Fedora bootc (ublue/base-main) w/ Gnome
+      NAME: Thousand Sunny
       PRETTY_NAME: Thousand Sunny
+  - type: initramfs
