@@ -16,6 +16,7 @@ modules:
   - from-file: common/fonts.yaml
   - from-file: common/packages.yaml
   - from-file: common/plymouth.yaml
+  - from-file: laptop/fingerprint.yaml
   - from-file: desktop/gnome.yaml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
