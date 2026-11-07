@@ -37,6 +37,7 @@ modules:
         - loupe
         - papers
         - pinentry-gnome3
+        - seahorse
         - showtime
         - simple-scan
         - sushi
