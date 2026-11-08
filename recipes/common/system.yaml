@@ -14,4 +14,15 @@ modules:
       ID: fedora
       NAME: Thousand Sunny
       PRETTY_NAME: Thousand Sunny
+  - type: systemd
+    system:
+      disabled:
+        - flatpak-system-update.service
+        - flatpak-system-update.timer
+        - raid-check.timer.service
+        - raid-check.timer.timer
+        - rpm-ostree-countme.service
+        - rpm-ostree-countme.timer
+        - rpm-ostreed-automatic.service
+        - rpm-ostreed-automatic.timer
   - type: initramfs
