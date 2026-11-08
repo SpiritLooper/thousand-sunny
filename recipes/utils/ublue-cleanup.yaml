@@ -9,6 +9,7 @@ modules:
         - gamemode
         - game-music-emu
         - ublue-os-just
+        - ublue-os-update-services
         # VM guest additions stuff
         - open-vm-tools
         - virtualbox-guest-additions
@@ -20,7 +21,13 @@ modules:
         # Firefox stuff
         - firefox
         - firefox-langpacks
+        # Disk stuff
+        - mdadm
   - type: systemd
     system:
       disabled:
         - sshd.service
+        - rpm-ostree-countme.service
+        - rpm-ostree-countme.timer
+        - rpm-ostreed-automatic.service
+        - rpm-ostreed-automatic.timer
