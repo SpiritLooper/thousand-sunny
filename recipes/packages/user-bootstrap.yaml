@@ -6,5 +6,6 @@ modules:
       packages:
         - chezmoi
         - fish
+        - netcat
         - tuned
         - tuned-ppd
