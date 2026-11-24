@@ -6,6 +6,7 @@ modules:
       packages:
         - chezmoi
         - fish
+        - fuse-libs
         - netcat
         - tuned
         - tuned-ppd
